@@ -1,12 +1,17 @@
-# Neovim Copilot Manual Setup
+# My dotfiles
 
-To enable Copilot in Neovim, run:
+## Requirements
+- **Stow**
 
+## Installation
+Enable Copilot in Neovim and follow the prompts to authenticate:
 ```
 :Copilot setup
 ```
-
-Follow the prompts to authenticate.
-
-> Note: This setup must be performed on every machine.
+> Note: This setup must be performed on every machine.  
 > The Copilot authentication file is not tracked by git.
+
+Use GNU Stow to create symlinks:
+```
+stow .
+```
