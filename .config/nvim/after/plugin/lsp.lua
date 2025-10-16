@@ -1,12 +1,15 @@
-local lspconfig = require('lspconfig')
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-vim.lsp.config('lua_ls', { capabilities = capabilities })
-
-vim.lsp.config('ts_ls', {
+vim.lsp.config["luals"] = {
   capabilities = capabilities,
-  init_options = { hostInfo = 'neovim' },
-  cmd = { 'typescript-language-server', '--stdio' },
+  cmd = { "lua-language-server" },
+  filetypes = { "lua" },
+  root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+}
+
+vim.lsp.config["ts_ls"] = {
+  capabilities = capabilities,
+  cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
     'javascript',
     'javascriptreact',
@@ -16,10 +19,9 @@ vim.lsp.config('ts_ls', {
     'typescript.tsx',
   },
   root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json', '.git' },
-})
+}
 
-
-lspconfig.sourcekit.setup {
+vim.lsp.config["sourcekit"] = {
   capabilities = {
     workspace = {
       didChangeWatchedFiles = {
@@ -29,23 +31,43 @@ lspconfig.sourcekit.setup {
   },
 }
 
-require("mason-lspconfig").setup {
-  ensure_installed = {
-    'ast_grep',
-    'bashls',
-    'clangd',
-    'cssls',
-    'gopls',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'omnisharp',
-    'pyright',
-    'remark_ls',
-    'ts_ls',
-    'vimls',
-  },
-}
+vim.lsp.enable({
+  "luals",
+  "ts_ls",
+  "sourcekit",
+  "clangd",
+  "pyright",
+  -- "typescript-language-server",
+  "ast_grep",
+  "bash-language-server",
+  "beautysh",
+  "css-lsp",
+  "gopls",
+  "html-lsp",
+  "json-lsp",
+  -- "lua-language-server",
+  "omnisharp",
+  "remark-language-server",
+  "vim-language-server",
+})
+
+-- require("mason-lspconfig").setup {
+--   ensure_installed = {
+--     'ast_grep',
+--     'bashls',
+--     'clangd',
+--     'cssls',
+--     'gopls',
+--     'html',
+--     'jsonls',
+--     'lua_ls',
+--     'omnisharp',
+--     'pyright',
+--     'remark_ls',
+--     'ts_ls',
+--     'vimls',
+--   },
+-- }
 
 local function lsp_on_attach(event)
   local opts = { buffer = event.buf }
@@ -66,3 +88,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = lsp_on_attach,
 })
+
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     if client:supports_method('textDocument/completion') then
+--       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+--     end
+--   end,
+-- })
