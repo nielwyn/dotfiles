@@ -19,7 +19,7 @@ local options = {
   sidescrolloff  = 10,
   winborder      = "single",
   foldenable     = false,
-  colorcolumn    = "80",
+  -- colorcolumn    = "80",
 
   smartindent    = true,
   -- fillchars      = {     -- Customize fill characters

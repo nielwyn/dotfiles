@@ -131,11 +131,11 @@ map.n {
   ['<Leader>fc'] = cmd('FzfLua lgrep_curbuf'),
   ['<Leader>fb'] = cmd('FzfLua buffers'),
   ['<Leader>fa'] = cmd('FzfLua live_grep_native'),
-  ['<Leader>fs'] = cmd('FzfLua grep_cword'),
+  -- ['<Leader>fs'] = cmd('FzfLua grep_cword'),
   ['<Leader>ff'] = cmd('FzfLua files'),
   ['<Leader>fh'] = cmd('FzfLua helptags'),
   ['<Leader>fo'] = cmd('FzfLua oldfiles'),
-  ['<Leader>gc'] = cmd('FzfLua git_commits'),
+  ['<Leader>fs'] = cmd('FzfLua git_status'),
   ['<Leader>o'] = cmd('FzfLua lsp_document_symbols'),
 }
 

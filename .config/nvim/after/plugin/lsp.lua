@@ -7,6 +7,16 @@ vim.lsp.config["luals"] = {
   root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
 }
 
+vim.lsp.config["clangd"] = {
+  capabilities = capabilities,
+  cmd = { "clangd", "--background-index" },
+  filetypes = { "c", "cpp", "objc", "objcpp" },
+  root_markers = { 'compile_commands.json', '.git' },
+  init_options = {
+    fallbackFlags = { "--std=c++20" }
+  },
+}
+
 vim.lsp.config["ts_ls"] = {
   capabilities = capabilities,
   cmd = { "typescript-language-server", "--stdio" },
