@@ -4,8 +4,6 @@ vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = "#444a73", bold = true })
 vim.api.nvim_set_hl(0, 'LineNr', { fg = "#ff757f", bold = true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = "#444a73", bold = true })
 vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 
 vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = "#c3e88d", bg = 'NONE' })
 vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = "#ffc777", bg = 'NONE' })

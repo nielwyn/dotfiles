@@ -8,13 +8,25 @@ vim.lsp.config["luals"] = {
 }
 
 vim.lsp.config["clangd"] = {
-  capabilities = capabilities,
-  cmd = { "clangd", "--background-index" },
-  filetypes = { "c", "cpp", "objc", "objcpp" },
-  root_markers = { 'compile_commands.json', '.git' },
-  init_options = {
-    fallbackFlags = { "--std=c++20" }
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--completion-style=detailed",
+    "--function-arg-placeholders",
+    "--fallback-style=chromium",
+    "--pch-storage=memory",
+    "-j=4",
   },
+  capabilities = capabilities,
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  root_markers = {
+    "compile_commands. json",
+    ".clangd",
+    ".git"
+  },
+  single_file_support = true,
 }
 
 vim.lsp.config["ts_ls"] = {
@@ -47,7 +59,6 @@ vim.lsp.enable({
   "sourcekit",
   "clangd",
   "pyright",
-  -- "typescript-language-server",
   "ast_grep",
   "bash-language-server",
   "beautysh",
@@ -55,7 +66,6 @@ vim.lsp.enable({
   "gopls",
   "html-lsp",
   "json-lsp",
-  -- "lua-language-server",
   "omnisharp",
   "remark-language-server",
   "vim-language-server",
