@@ -12,3 +12,6 @@ family = "JetBrainsMono Nerd Font"
 
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
+
+[window]
+opacity = 0.9
