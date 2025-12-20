@@ -23,7 +23,9 @@ For macOS:
 stow -t ~ macos
 ```
 
-### 3. Setup Swaybg (Wallpaper)
+### 3. Setup Swaybg (Wallpaper) **[Linux Only]**
+
+> The following setup is for Linux systems running Sway or other Wayland compositors.
 
 Enable `swaybg.service` to start with compositor (e.g., niri) using:
 ```sh
