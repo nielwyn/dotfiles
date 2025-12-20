@@ -110,7 +110,7 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    gaps 1
+    gaps 3
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -136,10 +136,7 @@ layout {
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
     // preset-window-heights { }
 
-    // You can change the default width of the new windows.
     default-column-width { proportion 0.5; }
-    // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
@@ -152,11 +149,18 @@ layout {
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
 
-    // You can change how the focus ring looks.
     focus-ring {
         width 1.5
-        active-color "#6b8cae"
-        inactive-color "#a9b1d6"
+        active-color "#58729a"
+        inactive-color "#31405b"
+    }
+
+    tab-indicator {
+        width 4.5
+        gap 0
+        place-within-column
+        active-color "#b35b00"  
+        inactive-color "#3b2100"
     }
 
     border {
@@ -187,12 +191,6 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
