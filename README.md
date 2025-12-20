@@ -4,14 +4,18 @@
 - **Stow**
 
 ## Installation
-Enable Copilot in Neovim and follow the prompts to authenticate:
+### Copilot setup
+Follow the prompts to authenticate:
 ```
 :Copilot setup
 ```
-> Note: This setup must be performed on every machine.  
-> The Copilot authentication file is not tracked by git.
-
+### Create symlinks
 Use GNU Stow to create symlinks:
+Linux
 ```
-stow .
+stow -t ~ linux
+```
+MacOS
+```
+stow -t ~ macos
 ```
