@@ -1,0 +1,54 @@
+gui:
+  theme:
+    defaultBgColor:
+      - "#222436"
+    defaultFgColor:
+      - "#c8d3f5"
+    activeBorderColor:
+      - "#89ddff"
+      - bold
+    inactiveBorderColor:
+      - "#1e2030"
+    searchingActiveBorderColor:
+      - "#3e68d7"
+      - bold
+    optionsTextColor:
+      - "#82aaff"
+    selectedLineBgColor:
+      - "#2f334d"
+    inactiveViewSelectedLineBgColor:
+      - "#191B29"
+    cherryPickedCommitFgColor:
+      - "#82aaff"
+    cherryPickedCommitBgColor:
+      - "#2f334d"
+    markedBaseCommitFgColor:
+      - "#c099ff"
+    markedBaseCommitBgColor:
+      - "#2f334d"
+    unstagedChangesColor:
+      - "#ff966c"
+    stagedChangesColor:
+      - "#c3e88d"
+    untrackedChangesColor:
+      - "#82aaff"
+    conflictColor:
+      - "#ff757f"
+    diffAddColor:
+      - "#2a4556"
+    diffChangeColor:
+      - "#252a3f"
+    diffDeleteColor:
+      - "#4b2a3d"
+    branchFgColor:
+      - "#82aaff"
+    tagFgColor:
+      - "#c099ff"
+    commitFgColor:
+      - "#c8d3f5"
+    stashFgColor:
+      - "#86e1fc"
+    dimFgColor:
+      - "#737aa2"
+    subtleBgAccent:
+      - "#191B29"

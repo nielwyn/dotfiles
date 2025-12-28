@@ -6,5 +6,11 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Lazygit config path
-LG_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/lazygit"
-alias lg="LG_CONFIG_FILE=\"$LG_CONFIG_DIR/config.yml\" lazygit"
+# LG_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/lazygit"
+# alias lg="LG_CONFIG_FILE=\"$LG_CONFIG_DIR/config.yml\" lazygit"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+lg() {
+  LG_CONFIG_FILE="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit/tokyonight_moon.yml" lazygit
+}
