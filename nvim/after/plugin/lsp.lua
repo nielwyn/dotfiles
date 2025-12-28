@@ -1,10 +1,16 @@
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-vim.lsp.config["luals"] = {
-  capabilities = capabilities,
-  cmd = { "lua-language-server" },
-  filetypes = { "lua" },
+vim.lsp.config['lua-language-server'] = {
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
   root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      }
+    }
+  }
 }
 
 vim.lsp.config["clangd"] = {
@@ -54,7 +60,7 @@ vim.lsp.config["sourcekit"] = {
 }
 
 vim.lsp.enable({
-  "luals",
+  "lua-language-server",
   "ts_ls",
   "sourcekit",
   "clangd",

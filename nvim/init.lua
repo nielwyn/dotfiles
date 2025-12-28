@@ -2,8 +2,7 @@ require("config.lazy")
 require("options")
 require("keymap")
 require("theme")
-
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, { pattern = "*", command = "redrawstatus" })
+require("autocmd")
 
 -- for persistent undotree
 if vim.fn.has("persistent_undo") then
