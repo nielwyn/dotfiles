@@ -28,7 +28,7 @@ vim.lsp.config["clangd"] = {
   capabilities = capabilities,
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
   root_markers = {
-    "compile_commands. json",
+    "compile_commands.json",
     ".clangd",
     ".git"
   },
