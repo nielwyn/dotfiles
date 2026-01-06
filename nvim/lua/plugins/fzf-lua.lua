@@ -7,7 +7,8 @@ return {
       formatter = "path.filename_first",
     },
     fzf_opts = {
-      ["--tmux"] = "center,100%,100%"
+      ["--tmux"] = "center,100%,100%",
+      ["--sort"] = true,
     },
     winopts = {
       height = 1,
