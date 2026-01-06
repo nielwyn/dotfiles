@@ -1,6 +1,6 @@
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-vim.lsp.config['lua-language-server'] = {
+vim.lsp.config['lua_ls'] = {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
   root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
@@ -12,6 +12,13 @@ vim.lsp.config['lua-language-server'] = {
     }
   }
 }
+
+vim.lsp.config("neocmake", {
+  cmd = { "neocmakelsp", "stdio" },
+  filetypes = { "cmake" },
+  root_markers = { "CMakeLists.txt", ".git" },
+  capabilities = capabilities,
+})
 
 vim.lsp.config["clangd"] = {
   cmd = {
@@ -60,7 +67,8 @@ vim.lsp.config["sourcekit"] = {
 }
 
 vim.lsp.enable({
-  "lua-language-server",
+  "lua_ls",
+  "neocmake",
   "ts_ls",
   "sourcekit",
   "clangd",
