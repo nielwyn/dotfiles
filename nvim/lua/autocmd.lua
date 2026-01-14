@@ -32,21 +32,31 @@ vim.api.nvim_create_autocmd("FileType", {
     local function build(should_run)
       vim.cmd("silent write")
 
-      local file = vim.fn.expand("%")
-      local out = vim.fn.expand("%:r")
+      local out = "program"
       if out == "" then out = "cpp_run" end
 
       compiled_outputs[out] = true
 
+      local cpp_files = vim.fn.glob("*.cpp", false, true)
+
+      if #cpp_files == 0 then
+        vim.notify("No .cpp files found in current directory", vim.log.levels.WARN)
+        return
+      end
+
       local compile_args = {}
       vim.list_extend(compile_args, vim.split(vim.g.cpp_compiler, "%s+"))
       vim.list_extend(compile_args, vim.split(vim.g.cpp_flags, "%s+"))
-      table.insert(compile_args, file)
+
+      for _, cpp_file in ipairs(cpp_files) do
+        table.insert(compile_args, cpp_file)
+      end
+
       table.insert(compile_args, "-o")
       table.insert(compile_args, out)
 
       vim.fn.setqflist({}, 'r', { title = 'C++ Build', items = {} })
-      vim.notify("Building.. .", vim.log.levels.INFO)
+      vim.notify("Building " .. #cpp_files .. " file(s)...", vim.log.levels.INFO)
 
       vim.system(
         compile_args,

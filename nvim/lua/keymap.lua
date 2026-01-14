@@ -127,11 +127,11 @@ end)
 -- FzfLua
 ----------------------------
 map.n {
-  ['<Leader>fr'] = cmd('FzfLua resume'),
+  ['<Leader>fr'] = cmd('FzfLua live_grep resume=true'),
   ['<Leader>fc'] = cmd('FzfLua lgrep_curbuf'),
   ['<Leader>fb'] = cmd('FzfLua buffers'),
-  ['<Leader>fa'] = cmd('FzfLua live_grep_native'),
-  -- ['<Leader>fs'] = cmd('FzfLua grep_cword'),
+  ['<Leader>fa'] = cmd('FzfLua live_grep'),
+  ['<Leader>fw'] = cmd('FzfLua grep_cword'),
   ['<Leader>ff'] = cmd('FzfLua files'),
   ['<Leader>fh'] = cmd('FzfLua helptags'),
   ['<Leader>fo'] = cmd('FzfLua oldfiles'),
