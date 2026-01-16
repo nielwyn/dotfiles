@@ -19,7 +19,7 @@ return {
     },
     previewers = {
       bat = {
-        args = "--style=numbers,changes --color=always --theme=TwoDark",
+        args = "--color=always --style=numbers,changes,header --theme=TwoDark",
       }
     }
   }

@@ -1,3 +1,18 @@
 [user]
+    name = nielwyn
+    email = nghoangnghiabt@gmail.com
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta
+
+[delta]
+    navigate = true
+    dark = true
+
+[merge]
+    conflictStyle = zdiff3
 	name = nielwyn
 	email = nghoangnghiabt@gmail.com

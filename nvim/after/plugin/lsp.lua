@@ -24,22 +24,21 @@ vim.lsp.config["clangd"] = {
   cmd = {
     "clangd",
     "--background-index",
-    "--clang-tidy",
-    "--header-insertion=iwyu",
     "--completion-style=detailed",
-    "--function-arg-placeholders",
+    "--all-scopes-completion",
+    "--header-insertion=iwyu",
+    "--header-insertion-decorators",
     "--fallback-style=chromium",
-    "--pch-storage=memory",
-    "-j=4",
   },
   capabilities = capabilities,
-  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-  root_markers = {
-    "compile_commands.json",
-    ".clangd",
-    ".git"
-  },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
   single_file_support = true,
+  init_options = {
+    clangdFileStatus = true,
+    usePlaceholders = true,
+    completeUnimported = true,
+    semanticHighlighting = true,
+  },
 }
 
 vim.lsp.config["ts_ls"] = {
