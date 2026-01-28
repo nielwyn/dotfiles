@@ -65,6 +65,16 @@ vim.lsp.config["sourcekit"] = {
   },
 }
 
+vim.lsp.config['yamlls'] = {
+  cmd = { "yaml-language-server", "--stdio" },
+  filetypes = {
+    'yaml',
+    'yaml.docker-compose',
+    'yaml.gitlab',
+    'yaml.helm-values'
+  },
+}
+
 vim.lsp.enable({
   "lua_ls",
   "neocmake",
@@ -82,6 +92,7 @@ vim.lsp.enable({
   "omnisharp",
   "remark-language-server",
   "vim-language-server",
+  "yamlls",
 })
 
 -- require("mason-lspconfig").setup {
