@@ -14,3 +14,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 lg() {
   LG_CONFIG_FILE="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit/tokyonight_moon.yml" lazygit
 }
+
+export PATH="$HOME/.local/bin:$PATH"
