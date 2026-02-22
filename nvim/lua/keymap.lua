@@ -1,7 +1,6 @@
 local harpoon = package.loaded.harpoon
 local gitsigns = package.loaded.gitsigns
 local mini_files = package.loaded['mini.files']
-local conform = package.loaded.conform
 
 -- Create a smart keymap wrapper using metatables
 local keymap = {}
@@ -105,6 +104,7 @@ end)
 
 -- Conform formatting
 map.nv("<leader>bf", function()
+  local conform = package.loaded.conform
   if conform then
     conform.format({ async = true }, function(err)
       if not err then

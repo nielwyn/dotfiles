@@ -50,11 +50,11 @@ return {
       table.insert(config.sections.lualine_x, component)
     end
 
+    local tn = require("tokyonight.colors").setup()
     ins_left {
       function() return '' end,
       color = function()
         -- Use tokyonight palette for mode color
-        local tn = require("tokyonight.colors").setup()
         local mode_color = {
           n = tn.red,
           i = tn.green,

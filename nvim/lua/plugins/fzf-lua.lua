@@ -2,7 +2,7 @@ return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
-    { "fzf-tmux" },
+    "fzf-tmux",
     defaults = {
       formatter = "path.filename_first",
     },

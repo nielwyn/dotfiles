@@ -1,12 +1,16 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
   cmd = { "ConformInfo" },
   opts = {
     formatters_by_ft = {
+      sh = { "shfmt" },
+      bash = { "shfmt" },
+      zsh = { "shfmt" },
       lua = { "stylua" },
-      python = { "isort", "black" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
+      typescript = { "prettierd", "prettier", stop_after_first = true },
+      typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+      python = { "isort", "black", stop_after_first = true },
     },
     default_format_opts = {
       lsp_format = "fallback",

@@ -4,7 +4,7 @@ local options = {
   signcolumn     = "yes",
   colorcolumn    = "80",
   statuscolumn   = " %s%l%=%r",
-  laststatus     = 4,
+  laststatus     = 2,
   scrolloff      = 10,
   sidescrolloff  = 10,
   winborder      = "single",
