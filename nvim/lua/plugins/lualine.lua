@@ -54,7 +54,7 @@ return {
     ins_left {
       function()
         local mode_icons = {
-          n       = '',
+          n       = '󰩨',
           v       = '󰒅',
           V       = '󰫙',
           s       = '', -- Select character
