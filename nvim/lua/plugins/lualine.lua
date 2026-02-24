@@ -52,32 +52,42 @@ return {
 
     local tn = require("tokyonight.colors").setup()
     ins_left {
-      function() return '' end,
-      color = function()
-        -- Use tokyonight palette for mode color
-        local mode_color = {
-          n = tn.red,
-          i = tn.green,
-          v = tn.blue,
-          [''] = tn.blue,
-          V = tn.blue,
-          c = tn.magenta,
-          no = tn.red,
-          s = tn.yellow,
-          S = tn.yellow,
-          [''] = tn.yellow,
-          ic = tn.yellow,
-          R = tn.orange,
-          Rv = tn.orange,
-          cv = tn.red,
-          ce = tn.red,
-          r = tn.cyan,
-          rm = tn.cyan,
-          ['r?'] = tn.cyan,
-          ['!'] = tn.red,
-          t = tn.red,
+      function()
+        local mode_icons = {
+          n       = '',
+          v       = '󰒅',
+          V       = '󰫙',
+          s       = '', -- Select character
+          ['\22'] = '󰩬', -- Visual block
+          S       = '', -- Select line
+          ['\19'] = '', -- Select block
+          i       = '󰏫',
+          R       = '󰛔', -- Replace, Replace completion, Virtual Replace, etc.
+          c       = '', -- Command-line, Overstrike, Ex mode
+          r       = '󰌑', -- Hit-enter, --more--, :confirm prompts
+          ['!']   = '',
+          t       = '', -- Terminal mode
         }
-        return { fg = mode_color[vim.fn.mode()] }
+        return mode_icons[vim.fn.mode()] or ''
+      end,
+
+      color = function()
+        local mode_color = {
+          n       = tn.blue,    -- Normal (calm)
+          v       = tn.magenta, -- Visual (highlight)
+          V       = tn.magenta, -- Visual line
+          ['\22'] = tn.magenta, -- Visual block
+          s       = tn.orange,  -- Select
+          S       = tn.orange,  -- Select line
+          ['\19'] = tn.orange,  -- Select block
+          i       = tn.green,   -- Insert (active)
+          R       = tn.red,     -- Replace (danger)
+          c       = tn.yellow,  -- Command (attention)
+          r       = tn.cyan,    -- Prompts (info)
+          ['!']   = tn.red,     -- Shell (executing)
+          t       = tn.green,   -- Terminal (active)
+        }
+        return { fg = mode_color[vim.fn.mode()] or tn.blue }
       end,
       padding = { left = 1, right = 1 },
     }
