@@ -6,7 +6,7 @@
     pager = delta
 
 [interactive]
-    diffFilter = delta
+    diffFilter = delta --color-only
 
 [delta]
     navigate = true
@@ -14,5 +14,3 @@
 
 [merge]
     conflictStyle = zdiff3
-	name = nielwyn
-	email = nghoangnghiabt@gmail.com
