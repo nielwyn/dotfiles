@@ -3,3 +3,4 @@ if status is-interactive
 end
 
 alias lg "lazygit"
+export PATH="$HOME/.local/bin:$PATH"
