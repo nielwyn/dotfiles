@@ -93,24 +93,6 @@ vim.lsp.enable({
     "yamlls",
 })
 
--- require("mason-lspconfig").setup {
---   ensure_installed = {
---     'ast_grep',
---     'bashls',
---     'clangd',
---     'cssls',
---     'gopls',
---     'html',
---     'jsonls',
---     'lua_ls',
---     'omnisharp',
---     'pyright',
---     'remark_ls',
---     'ts_ls',
---     'vimls',
---   },
--- }
-
 local function lsp_on_attach(event)
     local opts = { buffer = event.buf }
     local lsp = vim.lsp.buf
@@ -130,12 +112,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = lsp_on_attach,
 })
-
--- vim.api.nvim_create_autocmd('LspAttach', {
---   callback = function(ev)
---     local client = vim.lsp.get_client_by_id(ev.data.client_id)
---     if client:supports_method('textDocument/completion') then
---       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
---     end
---   end,
--- })
