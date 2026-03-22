@@ -17,7 +17,7 @@ return {
                 custom_rules = {
                     "scratch/custom_rules/",
                 },
-                source = "blink",
+                source = "native",
             },
             md_files = {
                 "AGENT.md",
