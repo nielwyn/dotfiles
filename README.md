@@ -13,14 +13,20 @@ Authenticate Copilot in Neovim by running:
 
 ### 2. Symlink Dotfiles Using Stow
 
-For Linux:
+Run from the `dotfiles` directory. Stow each package you want:
+
 ```sh
-stow -t ~ linux
+stow -t ~ alacritty bash fish gitconfig lazygit nvim tmux
 ```
 
-For macOS:
+Linux-only packages (Wayland/systemd):
 ```sh
-stow -t ~ macos
+stow -t ~ niri systemd
+```
+
+Or stow everything at once on Linux:
+```sh
+stow -t ~ alacritty bash fish gitconfig lazygit niri nvim systemd tmux
 ```
 
 ### 3. Setup Swaybg (Wallpaper) **[Linux Only]**
