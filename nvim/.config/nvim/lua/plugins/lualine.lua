@@ -22,7 +22,7 @@ return {
 			options = {
 				component_separators = "",
 				section_separators = "",
-				theme = "tokyonight-night",
+				theme = "everforest",
 			},
 			sections = {
 				lualine_a = {},
@@ -50,7 +50,15 @@ return {
 			table.insert(config.sections.lualine_x, component)
 		end
 
-		local tn = require("tokyonight.colors").setup()
+		local ef = {
+			blue = "#7fbbb3",
+			magenta = "#d699b6",
+			orange = "#e69875",
+			green = "#a7c080",
+			red = "#e67e80",
+			yellow = "#dbbc7f",
+			cyan = "#83c092",
+		}
 		ins_left({
 			function()
 				local mode_icons = {
@@ -73,21 +81,21 @@ return {
 
 			color = function()
 				local mode_color = {
-					n = tn.blue, -- Normal (calm)
-					v = tn.magenta, -- Visual (highlight)
-					V = tn.magenta, -- Visual line
-					["\22"] = tn.magenta, -- Visual block
-					s = tn.orange, -- Select
-					S = tn.orange, -- Select line
-					["\19"] = tn.orange, -- Select block
-					i = tn.green, -- Insert (active)
-					R = tn.red, -- Replace (danger)
-					c = tn.yellow, -- Command (attention)
-					r = tn.cyan, -- Prompts (info)
-					["!"] = tn.red, -- Shell (executing)
-					t = tn.green, -- Terminal (active)
+					n = ef.blue, -- Normal (calm)
+					v = ef.magenta, -- Visual (highlight)
+					V = ef.magenta, -- Visual line
+					["\22"] = ef.magenta, -- Visual block
+					s = ef.orange, -- Select
+					S = ef.orange, -- Select line
+					["\19"] = ef.orange, -- Select block
+					i = ef.green, -- Insert (active)
+					R = ef.red, -- Replace (danger)
+					c = ef.yellow, -- Command (attention)
+					r = ef.cyan, -- Prompts (info)
+					["!"] = ef.red, -- Shell (executing)
+					t = ef.green, -- Terminal (active)
 				}
-				return { fg = mode_color[vim.fn.mode()] or tn.blue }
+				return { fg = mode_color[vim.fn.mode()] or ef.blue }
 			end,
 			padding = { left = 1, right = 1 },
 		})
