@@ -1,4 +1,28 @@
-git:
-  pagers:
-    - colorArg: "always"
-      pager: "/usr/bin/delta"
+gui:
+  theme:
+    activeBorderColor:
+      - "#A7C080"
+      - bold
+    inactiveBorderColor:
+      - "#475258"
+    searchingActiveBorderColor:
+      - "#DBBC7F"
+      - bold
+    optionsTextColor:
+      - "#7FBBB3"
+    selectedLineBgColor:
+      - "#3D484D"
+    inactiveViewSelectedLineBgColor:
+      - "#343F44"
+    cherryPickedCommitFgColor:
+      - "#D699B6"
+    cherryPickedCommitBgColor:
+      - "#4A444E"
+    markedBaseCommitFgColor:
+      - "#E69875"
+    markedBaseCommitBgColor:
+      - "#4D4C43"
+    unstagedChangesColor:
+      - "#E67E80"
+    defaultFgColor:
+      - "#D3C6AA"
