@@ -8,7 +8,7 @@ map("n", "Y", '"+Y')
 map("v", "<C-j>", ":m '>+1<CR>gv")
 map("v", "<C-k>", ":m '<-2<CR>gv")
 
--- Copy buffer path to clipboard
+-- copy buffer path to clipboard
 map("n", "yp", function()
 	local path = vim.fn.expand("%:p")
 	vim.fn.setreg("+", path)
