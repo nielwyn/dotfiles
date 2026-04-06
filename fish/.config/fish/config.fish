@@ -23,8 +23,3 @@ if status is-interactive
     set -g fish_pager_color_description 859289
     set -g fish_pager_color_progress 859289 --background=343f44
 end
-
-set -gx PATH $HOME/.local/bin $PATH
-set -gx PATH $HOME/go/bin $PATH
-set -gx BUN_INSTALL $HOME/.bun
-set -gx PATH $BUN_INSTALL/bin $PATH
