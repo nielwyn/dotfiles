@@ -1,20 +1,3 @@
-local lsp = vim.lsp.buf
-
-vim.api.nvim_create_autocmd("LspAttach", {
-	desc = "LSP actions",
-	callback = function(event)
-		local opts = { buffer = event.buf }
-		vim.keymap.set("n", "K", lsp.hover, opts)
-		vim.keymap.set("n", "gd", lsp.definition, opts)
-		vim.keymap.set("n", "gD", lsp.declaration, opts)
-		vim.keymap.set("n", "gi", lsp.implementation, opts)
-		vim.keymap.set("n", "gr", lsp.references, opts)
-		vim.keymap.set("n", "go", lsp.type_definition, opts)
-		vim.keymap.set("n", "<leader>rn", lsp.rename, opts)
-		vim.keymap.set("n", "<leader>ca", lsp.code_action, opts)
-	end,
-})
-
 local cpp_compiler = "clang++"
 local cpp_flags = "-std=c++20 -O2 -Wall -Wextra"
 local compiled_outputs = {}

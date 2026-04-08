@@ -1,4 +1,5 @@
 if status is-interactive
+    alias v nvim
     alias lg lazygit
 
     # everforest dark medium palette
