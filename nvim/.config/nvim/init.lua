@@ -30,6 +30,7 @@ vim.pack.add({
 	"https://github.com/christoomey/vim-tmux-navigator",
 })
 
+require("vim._core.ui2").enable()
 vim.cmd("packadd nvim.undotree")
 
 require("options")
