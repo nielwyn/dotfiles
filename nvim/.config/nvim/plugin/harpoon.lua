@@ -7,6 +7,9 @@ harpoon:setup({
     },
 })
 
+local harpoon_extensions = require("harpoon.extensions")
+harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
+
 local map = vim.keymap.set
 map("n", "<leader>a", function()
     harpoon:list():add()
