@@ -19,11 +19,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "K", lsp.hover, opts)
         map("n", "gd", lsp.definition, opts)
         map("n", "gD", lsp.declaration, opts)
-        map("n", "gi", lsp.implementation, opts)
-        map("n", "gr", lsp.references, opts)
-        map("n", "go", lsp.type_definition, opts)
-        map("n", "<leader>rn", lsp.rename, opts)
-        map("n", "<leader>ca", lsp.code_action, opts)
+        map("n", "grr", lsp.references, opts)
+        map("n", "gri", lsp.implementation, opts)
+        map("n", "grt", lsp.type_definition, opts)
+        map("n", "grn", lsp.rename, opts)
+        map("n", "gra", lsp.code_action, opts)
     end,
 })
 
