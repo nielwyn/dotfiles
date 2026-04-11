@@ -113,7 +113,7 @@ ins_left({ "progress" })
 ins_left({
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    symbols = { error = " ", warn = " ", info = " " },
+    symbols = { error = " ", warn = " ", info = " " },
 })
 
 ins_left({
@@ -138,7 +138,8 @@ ins_left({
         end
         return msg
     end,
-    icon = " LSP:",
+    icon = " LSP:",
+
 })
 
 ins_right({
@@ -160,7 +161,7 @@ ins_right({
 
 ins_right({
     "diff",
-    symbols = { added = " ", modified = " ", removed = " " },
+    symbols = { added = " ", modified = " ", removed = " " },
     cond = conditions.hide_in_width,
 })
 

@@ -1,4 +1,7 @@
-require("trouble").setup({})
+require("trouble").setup()
+
+vim.api.nvim_set_hl(0, "TroubleNormal", { bg = "NONE", })
+vim.api.nvim_set_hl(0, "TroubleNormalNC", { bg = "NONE" })
 
 local map = vim.keymap.set
 map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle<cr>")

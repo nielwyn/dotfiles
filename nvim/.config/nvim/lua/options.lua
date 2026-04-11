@@ -7,7 +7,7 @@ vim.opt.undodir = undodir
 vim.opt.undofile = true
 
 local options = {
-    number = true,
+    number = false,
     relativenumber = true,
     signcolumn = "yes",
     colorcolumn = "80",
