@@ -4,3 +4,7 @@ export PATH="$HOME/go/bin:$PATH"
 if [[ $- == *i* ]]; then
   exec fish
 fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
