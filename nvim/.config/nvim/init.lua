@@ -17,6 +17,8 @@ vim.pack.add({
     "https://github.com/lewis6991/gitsigns.nvim",
 
     "https://github.com/ThePrimeagen/harpoon",
+    -- vim.pack doesn't support branch selection, so it clones master (v1) by default.
+    -- Config uses v2 API, so manually checkout harpoon2 branch after install:
     -- git clone -b harpoon2 https://github.com/ThePrimeagen/harpoon ~/.local/share/nvim/site/pack/core/opt/harpoon
     "https://github.com/nvim-lua/plenary.nvim",
 
