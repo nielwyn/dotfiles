@@ -27,9 +27,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
--- copy buffer path to clipboard
+-- Copy buffer path to clipboard
 map("n", "yp", function()
     local path = vim.fn.expand("%:p")
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '" to the clipboard!')
 end)
+
+local function tmux_navigate(direction)
+    local win = vim.api.nvim_get_current_win()
+    vim.cmd('wincmd ' .. direction)
+
+    -- If the window ID didn't change, this is a Neovim edge, move tmux instead.
+    if win == vim.api.nvim_get_current_win() then
+        local tmux_directions = { h = 'L', j = 'D', k = 'U', l = 'R' }
+        vim.fn.system('tmux select-pane -' .. tmux_directions[direction])
+    end
+end
+
+vim.keymap.set('n', '<C-h>', function() tmux_navigate('h') end)
+vim.keymap.set('n', '<C-j>', function() tmux_navigate('j') end)
+vim.keymap.set('n', '<C-k>', function() tmux_navigate('k') end)
+vim.keymap.set('n', '<C-l>', function() tmux_navigate('l') end)

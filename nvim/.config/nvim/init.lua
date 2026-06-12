@@ -23,13 +23,11 @@ vim.pack.add({
     "https://github.com/nvim-lua/plenary.nvim",
 
     "https://github.com/nvim-lualine/lualine.nvim",
-
     "https://github.com/mason-org/mason.nvim",
     "https://github.com/nvim-mini/mini.files",
     "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/folke/trouble.nvim",
     "https://github.com/tpope/vim-surround",
-    "https://github.com/christoomey/vim-tmux-navigator",
 })
 
 require("vim._core.ui2").enable()
@@ -40,3 +38,4 @@ require("theme")
 require("autocmd")
 require("lsp")
 require("keymap")
+
