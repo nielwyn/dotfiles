@@ -22,7 +22,7 @@ vim.lsp.config["neocmakelsp"] = {
 vim.lsp.config["gopls"] = {
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    root_markers = { "go.mod", "go.work", ".git" },
+    root_markers = { "go.work", "go.mod" },
 }
 
 vim.lsp.config["bash-language-server"] = {
