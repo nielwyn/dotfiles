@@ -9,6 +9,8 @@ require("conform").setup({
         typescript = { "prettierd", "prettier", stop_after_first = true },
         typescriptreact = { "prettierd", "prettier", stop_after_first = true },
         python = { "isort", "black", stop_after_first = true },
+        markdown = { "injected", "prettierd", "prettier", stop_after_first = false },
+        sql = { "sql_formatter" },
     },
     default_format_opts = {
         lsp_format = "fallback",
