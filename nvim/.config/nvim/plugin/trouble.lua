@@ -1,4 +1,10 @@
-require("trouble").setup()
+require("trouble").setup({
+    win = {
+        wo = {
+            colorcolumn = "",
+        },
+    },
+})
 
 vim.api.nvim_set_hl(0, "TroubleNormal", { bg = "NONE", })
 vim.api.nvim_set_hl(0, "TroubleNormalNC", { bg = "NONE" })
