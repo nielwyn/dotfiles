@@ -1,6 +1,7 @@
 if status is-interactive
     alias v nvim
     alias lg lazygit
+    alias lsql lazysql
 
     # everforest dark medium palette
     set -g fish_color_normal d3c6aa
