@@ -74,6 +74,11 @@ vim.lsp.config["css-lsp"] = {
 vim.lsp.config["json-lsp"] = {
     cmd = { "vscode-json-language-server", "--stdio" },
     filetypes = { "json", "jsonc" },
+    settings = {
+        json = {
+            format = { enable = true },
+        },
+    },
 }
 
 vim.lsp.config["yaml-language-server"] = {
