@@ -86,6 +86,12 @@ vim.lsp.config["yaml-language-server"] = {
     },
 }
 
+vim.lsp.config["postgres-language-server"] = {
+    cmd = { "postgres-language-server", "lsp-proxy" },
+    filetypes = { "sql" },
+    root_markers = { "postgres-language-server.jsonc", ".git" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -99,4 +105,5 @@ vim.lsp.enable({
     "css-lsp",
     "json-lsp",
     "yaml-language-server",
+    "postgres-language-server",
 })
