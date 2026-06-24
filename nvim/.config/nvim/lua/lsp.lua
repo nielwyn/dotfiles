@@ -97,6 +97,11 @@ vim.lsp.config["postgres-language-server"] = {
     root_markers = { "postgres-language-server.jsonc", ".git" },
 }
 
+vim.lsp.config["html-lsp"] = {
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -111,4 +116,5 @@ vim.lsp.enable({
     "json-lsp",
     "yaml-language-server",
     "postgres-language-server",
+    "html-lsp",
 })

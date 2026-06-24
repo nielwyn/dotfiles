@@ -11,6 +11,7 @@ require("conform").setup({
         python = { "isort", "black", stop_after_first = true },
         markdown = { "injected", "prettierd", "prettier", stop_after_first = false },
         sql = { "pg_format" },
+        html = { "prettierd", "prettier", stop_after_first = true },
     },
     default_format_opts = {
         lsp_format = "fallback",
