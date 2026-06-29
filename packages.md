@@ -1,24 +1,24 @@
 sudo pacman -S --needed \
-      alacritty \
-      alsa-utils \
-      bat \
-      brightnessctl \
-      fish \
-      fzf \
-      git \
-      go \
-      lazygit \
-      man-db \
-      neovim \
-      niri \
-      nodejs \
-      noto-fonts-cjk \
-      openssh \
-      pipewire-pulse \
-      sof-firmware \
-      stow \
-      swaybg \
-      tmux \
-      ttf-jetbrains-mono-nerd \
-      unzip \
-      wl-clipboard \
+ iwd\
+ alacritty\
+ alsa-utils\
+ bat\
+ brightnessctl\
+ fish\
+ fzf\
+ git\
+ go\
+ lazygit\
+ man-db\
+ neovim\
+ niri\
+ noto-fonts-cjk\
+ openssh\
+ pipewire-pulse\
+ sof-firmware\
+ stow\
+ swaybg\
+ tmux\
+ ttf-jetbrains-mono-nerd\
+ unzip\
+ wl-clipboard\
