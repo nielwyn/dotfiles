@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo pacman -S --needed \
  iwd\
  alacritty\
@@ -19,6 +20,7 @@ sudo pacman -S --needed \
  stow\
  swaybg\
  tmux\
+ tree-sitter-cli\
  ttf-jetbrains-mono-nerd\
  unzip\
- wl-clipboard\
+ wl-clipboard
