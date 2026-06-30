@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "K", lsp.hover, opts)
         map("n", "gd", lsp.definition, opts)
         map("n", "gD", lsp.declaration, opts)
-        map("n", "grr", lsp.references, opts)
+        map("n", "grr", "<cmd>Trouble lsp_references toggle<cr>", opts)
         map("n", "gri", lsp.implementation, opts)
         map("n", "grt", lsp.type_definition, opts)
         map("n", "grn", lsp.rename, opts)

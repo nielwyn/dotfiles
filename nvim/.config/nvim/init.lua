@@ -18,7 +18,6 @@ vim.pack.add({
     "https://github.com/nvim-lualine/lualine.nvim",
     "https://github.com/mason-org/mason.nvim",
     "https://github.com/nvim-mini/mini.files",
-    "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/folke/trouble.nvim",
     "https://github.com/tpope/vim-surround",
     "https://github.com/mistweaverco/kulala.nvim",
@@ -32,3 +31,6 @@ require("theme")
 require("autocmd")
 require("lsp")
 require("keymap")
+require("treesitter")
+
+-- plugin/*.lua load order is alphabetical and implicit
