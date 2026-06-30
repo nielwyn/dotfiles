@@ -45,7 +45,12 @@ local function tmux_navigate(direction)
     end
 end
 
-vim.keymap.set('n', '<C-h>', function() tmux_navigate('h') end)
-vim.keymap.set('n', '<C-j>', function() tmux_navigate('j') end)
-vim.keymap.set('n', '<C-k>', function() tmux_navigate('k') end)
-vim.keymap.set('n', '<C-l>', function() tmux_navigate('l') end)
+map('n', '<C-h>', function() tmux_navigate('h') end)
+map('n', '<C-j>', function() tmux_navigate('j') end)
+map('n', '<C-k>', function() tmux_navigate('k') end)
+map('n', '<C-l>', function() tmux_navigate('l') end)
+
+map("n", "<M-Left>", "<cmd>vertical resize -5<cr>")
+map("n", "<M-Right>", "<cmd>vertical resize +5<cr>")
+map("n", "<M-Up>", "<cmd>resize +5<cr>")
+map("n", "<M-Down>", "<cmd>resize -5<cr>")
