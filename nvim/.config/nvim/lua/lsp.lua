@@ -102,6 +102,12 @@ vim.lsp.config["html-lsp"] = {
     filetypes = { "html" },
 }
 
+vim.lsp.config["svelte-language-server"] = {
+    cmd = { "svelteserver", "--stdio" },
+    filetypes = { "svelte" },
+    root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -117,4 +123,5 @@ vim.lsp.enable({
     "yaml-language-server",
     "postgres-language-server",
     "html-lsp",
+    "svelte-language-server",
 })
