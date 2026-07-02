@@ -19,6 +19,9 @@ vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
     "https://github.com/nvim-mini/mini.files",
     "https://github.com/folke/trouble.nvim",
+    -- nvim-treesitter currently in read-only, kept only for its parser installer
+    -- highlighting/folding still comes from core vim.treesitter
+    "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/tpope/vim-surround",
     "https://github.com/mistweaverco/kulala.nvim",
 })
