@@ -44,13 +44,18 @@ local function tmux_navigate(direction)
         vim.fn.system('tmux select-pane -' .. tmux_directions[direction])
     end
 end
-
 map('n', '<C-h>', function() tmux_navigate('h') end)
 map('n', '<C-j>', function() tmux_navigate('j') end)
 map('n', '<C-k>', function() tmux_navigate('k') end)
 map('n', '<C-l>', function() tmux_navigate('l') end)
 
-map("n", "<M-Left>", "<cmd>vertical resize -5<cr>")
-map("n", "<M-Right>", "<cmd>vertical resize +5<cr>")
-map("n", "<M-Up>", "<cmd>resize +5<cr>")
-map("n", "<M-Down>", "<cmd>resize -5<cr>")
+-- Resize relative to screen direction, not the current window
+local function smart_resize(vertical, amount)
+    local has_next = vim.fn.winnr(vertical and "l" or "j") ~= vim.fn.winnr()
+    local delta = has_next and amount or -amount
+    vim.cmd((vertical and "vertical " or "") .. ("resize %+d"):format(delta))
+end
+map("n", "<M-Left>", function() smart_resize(true, -5) end)
+map("n", "<M-Right>", function() smart_resize(true, 5) end)
+map("n", "<M-Up>", function() smart_resize(false, -5) end)
+map("n", "<M-Down>", function() smart_resize(false, 5) end)

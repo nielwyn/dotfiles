@@ -5,6 +5,7 @@ sudo pacman -S --needed \
  alsa-utils\
  bat\
  brightnessctl\
+ fd\
  fish\
  fzf\
  git\
@@ -13,6 +14,7 @@ sudo pacman -S --needed \
  man-db\
  neovim\
  niri\
+ ripgrep\
  noto-fonts-cjk\
  openssh\
  pipewire-pulse\
