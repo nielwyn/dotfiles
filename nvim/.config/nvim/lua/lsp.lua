@@ -28,7 +28,6 @@ vim.lsp.config["gopls"] = {
 vim.lsp.config["bash-language-server"] = {
     cmd = { "bash-language-server", "start" },
     filetypes = { "sh" },
-    root_markers = { ".git" },
 }
 
 vim.lsp.config["fish-lsp"] = {
