@@ -108,6 +108,11 @@ vim.lsp.config["svelte-language-server"] = {
     root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
 }
 
+vim.lsp.config["markdown-lsp"] = {
+    cmd = { "marksman", "server" },
+    filetypes = { "markdown" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -124,4 +129,5 @@ vim.lsp.enable({
     "postgres-language-server",
     "html-lsp",
     "svelte-language-server",
+    "markdown-lsp",
 })
