@@ -46,7 +46,7 @@ vim.lsp.config["vim-language-server"] = {
     filetypes = { "vim" },
 }
 
-vim.lsp.config["python-lsp-server"] = {
+vim.lsp.config["python-ls"] = {
     cmd = { "pylsp" },
     filetypes = { "python" },
     root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
@@ -112,6 +112,11 @@ vim.lsp.config["markdown-lsp"] = {
     filetypes = { "markdown" },
 }
 
+vim.lsp.config["docker-ls"] = {
+    cmd = { "docker-language-server", "start", "--stdio" },
+    filetypes = { "dockerfile" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -120,7 +125,7 @@ vim.lsp.enable({
     "fish-lsp",
     "lua-language-server",
     "vim-language-server",
-    "python-lsp-server",
+    "python-ls",
     "typescript-language-server",
     "css-lsp",
     "json-lsp",
@@ -129,4 +134,5 @@ vim.lsp.enable({
     "html-lsp",
     "svelte-language-server",
     "markdown-lsp",
+    "docker-ls",
 })
