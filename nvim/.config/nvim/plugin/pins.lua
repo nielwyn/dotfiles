@@ -187,6 +187,10 @@ function M.toggle_quick_menu()
     vim.keymap.set("n", "<Esc>", close, opts)
     vim.keymap.set("n", "<C-e>", close, opts)
 
+    -- disable J and K, join/lookup
+    vim.keymap.set("n", "J", "<Nop>", opts)
+    vim.keymap.set("n", "K", "<Nop>", opts)
+
     -- close the box before jumping/cycling so these don't act on the
     -- floating window itself and leave it stuck open
     for i = 1, 4 do
