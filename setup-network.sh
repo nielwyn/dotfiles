@@ -1,7 +1,13 @@
- #!/bin/bash
+#!/bin/bash
 set -e
 
 sudo pacman -S --noconfirm iwd
+
+sudo tee /etc/iwd/main.conf > /dev/null << 'EOF'
+[General]
+AddressRandomization=network
+AddressRandomizationRange=full
+EOF
 
 # wlan0 network config
 sudo tee /etc/systemd/network/25-wlan0.network > /dev/null << 'EOF'
