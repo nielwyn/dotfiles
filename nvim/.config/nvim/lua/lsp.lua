@@ -117,6 +117,12 @@ vim.lsp.config["docker-ls"] = {
     filetypes = { "dockerfile" },
 }
 
+vim.lsp.config["rust-analyzer"] = {
+    cmd = { "rust-analyzer" },
+    filetypes = { "rust" },
+    root_markers = { "Cargo.toml", ".git" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -135,4 +141,5 @@ vim.lsp.enable({
     "svelte-language-server",
     "markdown-lsp",
     "docker-ls",
+    "rust-analyzer",
 })
