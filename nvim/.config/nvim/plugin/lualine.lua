@@ -156,7 +156,7 @@ ins_right({
 
 ins_right({
     "branch",
-    icon = "",
+    icon = "",
 })
 
 ins_right({
