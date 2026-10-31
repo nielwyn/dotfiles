@@ -62,16 +62,16 @@ ins_left({
             n = "󰩨",
             v = "󰒅",
             V = "󰫙",
-            s = "",
+            s = "󰒉",
             ["\22"] = "󰩬",
-            S = "",
-            ["\19"] = "",
+            S = "󰒆",
+            ["\19"] = "󰩭",
             i = "󰏫",
             R = "󰛔",
-            c = "",
+            c = "󰞷",
             r = "󰌑",
-            ["!"] = "",
-            t = "",
+            ["!"] = "󰔟",
+            t = "󰆍",
         }
         return mode_icons[vim.fn.mode()] or ""
     end,
@@ -113,7 +113,7 @@ ins_left({ "progress" })
 ins_left({
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    symbols = { error = " ", warn = " ", info = " " },
+    symbols = { error = "󰅙 ", warn = "󰀦 ", info = "󰋼 " },
 })
 
 ins_left({
@@ -138,7 +138,7 @@ ins_left({
         end
         return msg
     end,
-    icon = " LSP:",
+    icon = "󰣖 LSP:",
 
 })
 
@@ -156,12 +156,12 @@ ins_right({
 
 ins_right({
     "branch",
-    icon = "",
+    icon = "󰘬",
 })
 
 ins_right({
     "diff",
-    symbols = { added = " ", modified = " ", removed = " " },
+    symbols = { added = "󰐖 ", modified = "󰏬 ", removed = "󰍵 " },
     cond = conditions.hide_in_width,
 })
 
