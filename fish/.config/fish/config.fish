@@ -1,8 +1,9 @@
-if status is-interactive
-    alias v nvim
-    alias lg lazygit
-    alias lsql lazysql
+fish_add_path -g $HOME/.local/bin $HOME/go/bin
+set -gx EDITOR /usr/bin/nvim
+set -gx VISUAL /usr/bin/nvim
+set -gx SUDO_EDITOR /usr/bin/nvim
 
+if status is-interactive
     # everforest dark medium palette
     set -g fish_color_normal d3c6aa
     set -g fish_color_command 7fbbb3
@@ -24,4 +25,14 @@ if status is-interactive
     set -g fish_pager_color_completion d3c6aa
     set -g fish_pager_color_description 859289
     set -g fish_pager_color_progress 859289 --background=343f44
+
+    set -gx FZF_DEFAULT_OPTS "--height 40% --layout=reverse --border"
+    set -gx FZF_CTRL_T_COMMAND 'fd --type f --hidden --exclude .git'
+    set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
+    set -gx FZF_CTRL_T_OPTS "--preview 'bat -n --color=always {}'"
+    fzf --fish | source
+
+    alias v nvim
+    alias lg lazygit
+    alias lsql lazysql
 end
