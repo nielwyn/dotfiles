@@ -1,6 +1,8 @@
 function ls --wraps=ls --description 'ls with highlighted file permissions'
     if isatty stdout
-        command ls --color=always $argv | __highlight_permissions
+        set -l cols $COLUMNS
+        test -n "$cols"; or set cols 80
+        command ls -C -w $cols --color=always $argv | __highlight_permissions
     else
         command ls $argv
     end
@@ -15,10 +17,14 @@ function __highlight_permissions
             set -l rest (string sub -s 11 -- $line)
 
             switch $t
-                case d;   set t (set_color --bold blue)$t$N
-                case l;   set t (set_color --bold cyan)$t$N
-                case '-'; set t (set_color brblack)$t$N
-                case '*'; set t (set_color --bold magenta)$t$N
+                case d
+                    set t (set_color --bold blue)$t$N
+                case l
+                    set t (set_color --bold cyan)$t$N
+                case -
+                    set t (set_color brblack)$t$N
+                case '*'
+                    set t (set_color --bold magenta)$t$N
             end
 
             set bits (string replace -ar 'r' (set_color green)r$N $bits)
