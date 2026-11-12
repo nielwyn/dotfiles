@@ -1,5 +1,6 @@
 #!/bin/bash
 pkgs=(
+  intel-ucode        # CPU microcode; reloaded each boot, newer than BIOS ships
   sof-firmware       # Intel DSP firmware; no audio device without it
   intel-media-driver # Intel VA-API driver; nothing else pulls it in
   iwd
