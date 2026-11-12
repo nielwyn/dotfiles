@@ -13,16 +13,22 @@ vim.lsp.config["clangd"] = {
     },
 }
 
-vim.lsp.config["neocmakelsp"] = {
-    cmd = { "neocmakelsp", "stdio" },
-    filetypes = { "cmake" },
-    root_markers = { "CMakeLists.txt", ".git" },
+vim.lsp.config["rust-analyzer"] = {
+    cmd = { "rust-analyzer" },
+    filetypes = { "rust" },
+    root_markers = { "Cargo.toml", ".git" },
 }
 
 vim.lsp.config["gopls"] = {
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
     root_markers = { "go.work", "go.mod", ".git" },
+}
+
+vim.lsp.config["neocmakelsp"] = {
+    cmd = { "neocmakelsp", "stdio" },
+    filetypes = { "cmake" },
+    root_markers = { "CMakeLists.txt", ".git" },
 }
 
 vim.lsp.config["bash-language-server"] = {
@@ -35,6 +41,12 @@ vim.lsp.config["fish-lsp"] = {
     filetypes = { "fish" },
 }
 
+vim.lsp.config["pylsp"] = {
+    cmd = { "pylsp" },
+    filetypes = { "python" },
+    root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
+}
+
 vim.lsp.config["lua-language-server"] = {
     cmd = { "lua-language-server" },
     filetypes = { "lua" },
@@ -44,12 +56,6 @@ vim.lsp.config["lua-language-server"] = {
 vim.lsp.config["vim-language-server"] = {
     cmd = { "vim-language-server", "--stdio" },
     filetypes = { "vim" },
-}
-
-vim.lsp.config["python-ls"] = {
-    cmd = { "pylsp" },
-    filetypes = { "python" },
-    root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
 }
 
 vim.lsp.config["typescript-language-server"] = {
@@ -65,12 +71,40 @@ vim.lsp.config["typescript-language-server"] = {
     root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
 }
 
-vim.lsp.config["css-lsp"] = {
+vim.lsp.config["svelteserver"] = {
+    cmd = { "svelteserver", "--stdio" },
+    filetypes = { "svelte" },
+    root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+}
+
+vim.lsp.config["vscode-html-language-server"] = {
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html" },
+}
+
+vim.lsp.config["vscode-css-language-server"] = {
     cmd = { "vscode-css-language-server", "--stdio" },
     filetypes = { "css", "scss", "less" },
 }
 
-vim.lsp.config["json-lsp"] = {
+vim.lsp.config["buf"] = {
+    cmd = { "buf", "lsp", "serve" },
+    filetypes = { "proto" },
+    root_markers = { "buf.yaml", ".git" },
+}
+
+vim.lsp.config["postgres-language-server"] = {
+    cmd = { "postgres-language-server", "lsp-proxy" },
+    filetypes = { "sql" },
+    root_markers = { "postgres-language-server.jsonc", ".git" },
+}
+
+vim.lsp.config["docker-language-server"] = {
+    cmd = { "docker-language-server", "start", "--stdio" },
+    filetypes = { "dockerfile" },
+}
+
+vim.lsp.config["vscode-json-language-server"] = {
     cmd = { "vscode-json-language-server", "--stdio" },
     filetypes = { "json", "jsonc" },
     settings = {
@@ -90,63 +124,29 @@ vim.lsp.config["yaml-language-server"] = {
     },
 }
 
-vim.lsp.config["postgres-language-server"] = {
-    cmd = { "postgres-language-server", "lsp-proxy" },
-    filetypes = { "sql" },
-    root_markers = { "postgres-language-server.jsonc", ".git" },
-}
-
-vim.lsp.config["html-lsp"] = {
-    cmd = { "vscode-html-language-server", "--stdio" },
-    filetypes = { "html" },
-}
-
-vim.lsp.config["svelte-language-server"] = {
-    cmd = { "svelteserver", "--stdio" },
-    filetypes = { "svelte" },
-    root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
-}
-
-vim.lsp.config["markdown-lsp"] = {
+vim.lsp.config["marksman"] = {
     cmd = { "marksman", "server" },
     filetypes = { "markdown" },
 }
 
-vim.lsp.config["docker-ls"] = {
-    cmd = { "docker-language-server", "start", "--stdio" },
-    filetypes = { "dockerfile" },
-}
-
-vim.lsp.config["rust-analyzer"] = {
-    cmd = { "rust-analyzer" },
-    filetypes = { "rust" },
-    root_markers = { "Cargo.toml", ".git" },
-}
-
-vim.lsp.config["buf-ls"] = {
-    cmd = { "buf", "lsp", "serve" },
-    filetypes = { "proto" },
-    root_markers = { "buf.yaml", ".git" },
-}
-
 vim.lsp.enable({
     "clangd",
-    "neocmakelsp",
+    "rust-analyzer",
     "gopls",
+    "neocmakelsp",
     "bash-language-server",
     "fish-lsp",
+    "pylsp",
     "lua-language-server",
     "vim-language-server",
-    "python-ls",
     "typescript-language-server",
-    "css-lsp",
-    "json-lsp",
-    "yaml-language-server",
+    "svelteserver",
+    "vscode-html-language-server",
+    "vscode-css-language-server",
+    "buf",
     "postgres-language-server",
-    "html-lsp",
-    "svelte-language-server",
-    "markdown-lsp",
-    "docker-ls",
-    "rust-analyzer",
-    "buf-ls",
+    "docker-language-server",
+    "vscode-json-language-server",
+    "yaml-language-server",
+    "marksman",
 })
