@@ -123,6 +123,12 @@ vim.lsp.config["rust-analyzer"] = {
     root_markers = { "Cargo.toml", ".git" },
 }
 
+vim.lsp.config["buf-ls"] = {
+    cmd = { "buf", "lsp", "serve" },
+    filetypes = { "proto" },
+    root_markers = { "buf.yaml", ".git" },
+}
+
 vim.lsp.enable({
     "clangd",
     "neocmakelsp",
@@ -142,4 +148,5 @@ vim.lsp.enable({
     "markdown-lsp",
     "docker-ls",
     "rust-analyzer",
+    "buf-ls",
 })
