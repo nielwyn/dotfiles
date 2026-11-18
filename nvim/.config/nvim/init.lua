@@ -23,7 +23,6 @@ vim.pack.add({
     -- highlighting/folding still comes from core vim.treesitter
     "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/tpope/vim-surround",
-    "https://github.com/mistweaverco/kulala.nvim",
     "https://github.com/stevearc/oil.nvim",
 })
 

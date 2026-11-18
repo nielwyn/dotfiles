@@ -13,7 +13,6 @@ require("conform").setup({
         sql = { "pg_format" },
         html = { "prettierd", "prettier", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
-        http = { "kulala-fmt" },
         dockerfile = { "dockerfmt" },
     },
     default_format_opts = {
