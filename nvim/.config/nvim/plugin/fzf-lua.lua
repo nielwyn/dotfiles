@@ -3,6 +3,9 @@ require("fzf-lua").setup({
     defaults = {
         formatter = "path.filename_first",
     },
+    grep = {
+        hidden = true,
+    },
     fzf_opts = {
         ["--tmux"] = "center,100%,100%",
         ["--sort"] = true,
